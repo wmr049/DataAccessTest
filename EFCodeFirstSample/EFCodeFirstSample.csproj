@@ -56,9 +56,11 @@
     <Compile Include="Mappings\AutorMap.cs" />
     <Compile Include="Mappings\CategoriaMap.cs" />
     <Compile Include="Mappings\LivroMap.cs" />
+    <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="Model\Autor.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Livro.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -43,6 +43,25 @@ namespace EFCodeFirstSample
                 Titulo = "Robótica avançada",
                 CategoriaId = 3
             };
+
+            var andrebaltieri = new User
+            {
+                Email = "andrebaltieri@hotmail.com",
+                IsActive = true,
+                LastUpdateDate = DateTime.Now,
+                LastUpdateUser = "andrebaltieri",
+                Password = "andrebaltieri"
+            };
+
+            var batman = new User
+            {
+                Email = "bruce.wayne@hotmail.com",
+                IsActive = true,
+                LastUpdateDate = DateTime.Now,
+                LastUpdateUser = "andrebaltieri",
+                Password = "batman"
+            };
+
             #endregion
 
             #region Context
@@ -146,6 +165,25 @@ namespace EFCodeFirstSample
                     }
                     Console.WriteLine(Environment.NewLine);
                 }
+            }
+            #endregion
+
+            #region Usuarios
+            using (AppDataContext db = new AppDataContext())
+            {
+                db.Users.Add(andrebaltieri);
+                db.Users.Add(batman);
+                db.SaveChanges();
+
+                foreach (User user in db.Users)
+                {
+                    Console.WriteLine(String.Format("{0} - {1}", user.Id, user.Email));
+                }
+
+                Console.WriteLine(
+                    String.Format("{0} - {1}",
+                    db.Users.Find(batman.Id).Id,
+                    db.Users.Find(batman.Id).Email));
             }
             #endregion
 
